@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="navbar">
+      <nav class="container">
+        <div class="nav-box">
+          <a href="" class="main-name">Home</a>
+          <ul id="menuBox">
+            <li class="menu-item" data-attr="0"><a href="">Get started</a></li>
+            <li class="menu-item" data-attr="0"><a href="">About me</a></li>
+            <li class="menu-item" data-attr="1"><a href="">Projects</a></li>
+            <li class="menu-item" data-attr="1"><a href="">Contact</a></li>
+            <div id="slider"></div>
+          </ul>
+          <div id="mobileNav" class="mobile-icon-nav">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="mobileNavBar" class="mobile-nav">
+        <ul>
+          <li class="menu-item" data-attr="0">
+            <a href="">Get started</a>
+          </li>
+          <li class="menu-item" data-attr="0"><a href="">About me</a></li>
+          <li class="menu-item" data-attr="1"><a href="">Projects</a></li>
+          <li class="menu-item" data-attr="1"><a href="">Contact</a></li>
+        </ul>
+      </div>
+      <section class="started-section">
+        <div class="container">
+          <div class="big-content">
+            <h1>
+              I am <span>Miguel Ruiz</span>. <br />
+              Front-End Developer
+            </h1>
+            <p>This is my Portfolio Website !</p>
+
+            <div class="btn-group">
+              <button class="blue-btn" onclick="scrollToProjects()">
+                See my projects
+              </button>
+              <button class="outline-btn">
+                <img src="./img/download.svg" alt="" /> Download CV
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about-section">
+        <div class="container">
+          <div class="card-about">
+            <div class="img-profile">
+              <img
+                src="https://storage.googleapis.com/prd-engineering-asset/2021/12/e46ebeca-react-logo.png"
+                alt=""
+              />
+            </div>
+            <div class="des-profile">
+              <h1>About me</h1>
+              <span
+                >Hello! My name is Miguel and I have a great affinity for
+                collaborative work, I like to create designs that inspire and
+                involve people. As a UI designer, I believe that a good product
+                not only provides a solution, but also creates an emotional
+                experience for the people who use it. In my creative process I
+                use tools like Figma, Adobe XD, Photoshop and Illustrator that
+                help me in the workflow for the production of user
+                interfaces.</span
+              >
+              <button class="outline-btn">
+                More about me <img src="./img/arrow-right.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section" id="projects">
+        <div class="container">
+          <h1>My latest projects</h1>
+          <div class="list-item" id="listItem"></div>
+          <div class="btn-box">
+            <button class="blue-btn">
+              See all projects <img src="./img/arrow-right.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">sd</div>
+    </footer>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
