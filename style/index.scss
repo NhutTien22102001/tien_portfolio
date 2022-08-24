@@ -258,10 +258,130 @@ body {
             margin-top: 32px;
           }
         }
+        &.about-page {
+          max-width: 100%;
+          background-color: unset;
+          border: 0;
+          justify-content: space-between;
+          padding: 0;
+          gap: 140px;
+          padding-bottom: 128px;
+          padding-top: 64px;
+          @include screen(LG) {
+            gap: 50px;
+          }
+          @include screen(MD) {
+            padding-top: 32px;
+            padding-bottom: 64px;
+          }
+          .img-profile {
+            max-width: 448px;
+            @include screen(LG) {
+              max-width: 350px;
+            }
+          }
+          .des-profile {
+            h1 {
+              font-weight: 700;
+              font-size: 60px;
+              line-height: 71px;
+              @include screen(MD) {
+                font-weight: 500;
+                font-size: 34px;
+                line-height: 40px;
+                letter-spacing: 0.25px;
+              }
+            }
+            span {
+              margin-top: 24px;
+            }
+          }
+        }
+      }
+      .box-skill {
+        margin-top: 9px;
+        h1 {
+          font-weight: 500;
+          font-size: 34px;
+          line-height: 40px;
+          letter-spacing: 0.25px;
+          text-align: center;
+          @include screen(MD) {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32px;
+          }
+        }
+        .item-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
+          order: 1;
+          margin-top: 30px;
+          margin-bottom: 60px;
+          justify-content: center;
+          @include screen(MD) {
+            flex-direction: column;
+            align-items: center;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .card {
+            border-radius: 8px;
+            max-width: 27.8%;
+            min-height: 250px;
+            padding: 24px;
+            background-color: $round_black;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            @include screen(MD) {
+              padding: 16px;
+              max-width: 100%;
+              min-height: 165px;
+            }
+            img {
+              width: 50px;
+              height: 50px;
+              object-fit: cover;
+            }
+            h2 {
+              font-weight: 500;
+              font-size: 34px;
+              line-height: 40px;
+              letter-spacing: 0.25px;
+              @include screen(MD) {
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 32px;
+              }
+            }
+            span {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 28px;
+              /* or 175% */
+
+              letter-spacing: 0.44px;
+              @include screen(MD) {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                /* or 143% */
+
+                letter-spacing: 0.25px;
+              }
+            }
+          }
+        }
       }
     }
     .project-section {
       padding-bottom: 128px;
+      @include screen(MD) {
+        padding-bottom: 64px;
+      }
       h1 {
         font-weight: 500;
         font-size: 34px;
@@ -302,6 +422,67 @@ body {
         display: flex;
         justify-content: center;
       }
+    }
+  }
+  footer {
+    padding: 64px 0 32px 0;
+    @include screen(MD) {
+      padding: 32px 0;
+    }
+    .container {
+      display: flex !important;
+      gap: 129px;
+      @include screen(MD) {
+        flex-direction: column;
+        gap: 32px;
+        justify-content: center;
+        align-items: center;
+      }
+      .items {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        @include screen(MD) {
+          align-items: center;
+        }
+        .social-icon {
+          display: flex;
+          gap: 16px;
+          a {
+            font-size: 30px;
+          }
+        }
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          /* identical to box height, or 125% */
+
+          letter-spacing: 0.15px;
+
+          /* Acento */
+
+          color: #85bfd1;
+        }
+        a {
+          color: #fff;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.25px;
+        }
+      }
+    }
+    .creator {
+      @include screen(MD) {
+        margin-top: 48px;
+      }
+      margin-top: 81px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+      justify-content: center;
     }
   }
 }
