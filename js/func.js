@@ -16,12 +16,10 @@ let navTop = nav.offsetTop;
 const fixedNav = () => {
   if (window.scrollY >= navTop + 10) {
     nav.classList.add("sticky");
-    mobileNavBar.children[0].style.position = "fixed";
     mobileNavBar.children[0].style.top = `${nav.offsetHeight}px`;
   } else {
     nav.classList.remove("sticky");
     mobileNavBar.children[0].classList.remove("sticky");
-    mobileNavBar.children[0].style.position = "";
     mobileNavBar.children[0].style.top = ``;
   }
 };

@@ -4,12 +4,10 @@ import { knowledge } from "./skills.mjs";
 let mobileNav = document.getElementById("mobileNav");
 let mobileNavBar = document.getElementById("mobileNavBar");
 let section = document.getElementsByTagName("section");
-
 let menuItems = document.querySelectorAll(".menu-item");
 let silder = document.getElementById("slider");
 let menuBox = document.getElementById("menuBox");
 let widthArr = [];
-
 const customBar = (e) => {
   silder.style.width = `${menuItems[e].offsetWidth}px`;
   silder.style.background =
@@ -24,7 +22,6 @@ for (let i = 0; i < menuItems.length; i++) {
   });
 }
 const url = window.location.pathname;
-console.log(url);
 const urlAbout = () => {
   if (url === "/about.html") {
     customBar(0);
@@ -61,6 +58,7 @@ let toggleOpenIcon = "./img/menu-alt-3.svg";
 let toggleCloseIcon = "./img/close-icon.svg";
 mobileNav.children[0].src = toggleOpenIcon;
 let toggle = false;
+
 mobileNav.addEventListener("click", () => {
   toggle = !toggle;
   if (toggle) {
@@ -84,20 +82,28 @@ mobileNav.addEventListener("click", () => {
   }
 });
 
+window.addEventListener("resize", () => {
+  let screen = window.screen.width;
+  if (screen > 768) {
+    toggle = true;
+    mobileNav.click();
+  }
+});
+
 let dataContain = document.getElementById("listItem");
 
 projectData.slice(0, 2).map((e) => {
   dataContain
     ? (dataContain.innerHTML += `
-  <div class="box-item">
-    <a href="${e.link}">${e.name}</a>
-    <a href="">
-      <img
-        src="${e.img}"
-        alt="${e.name}"
-      />
-    </a>
-  </div>
+        <div class="box-item">
+            <a href="${e.link}">${e.name}</a>
+            <a href="">
+            <img
+                src="${e.img}"
+                alt="${e.name}"
+            />
+            </a>
+        </div>
   `)
     : null;
 });
@@ -105,46 +111,32 @@ projectData.slice(0, 2).map((e) => {
 let abilities = document.getElementById("abilities");
 let skills = document.getElementById("skills");
 let tools = document.getElementById("tools");
-
+const layout = (e) => {
+  return `
+    <div class="card">
+        <img src="${e.icon}" alt="" />
+        <h2>${e.name}</h2>
+        <span>
+            ${e.exp}
+        </span>
+    </div>
+  `;
+};
 if (abilities || skills || tools) {
   knowledge
     .filter((e) => e.type === "abilities")
     .map((e) => {
-      return (abilities.innerHTML += `
-    <div class="card">
-    <img src="${e.icon}" alt="" />
-    <h2>${e.name}</h2>
-    <span>
-        ${e.exp}
-    </span>
-  </div>
-    `);
+      return (abilities.innerHTML += layout(e));
     });
 
   knowledge
     .filter((e) => e.type === "skills")
     .map((e) => {
-      return (skills.innerHTML += `
-    <div class="card">
-    <img src="${e.icon}" alt="" />
-    <h2>${e.name}</h2>
-    <span>
-        ${e.exp}
-    </span>
-  </div>
-    `);
+      return (skills.innerHTML += layout(e));
     });
   knowledge
     .filter((e) => e.type === "tools")
     .map((e) => {
-      return (tools.innerHTML += `
-    <div class="card">
-    <img src="${e.icon}" alt="" />
-    <h2>${e.name}</h2>
-    <span>
-        ${e.exp}
-    </span>
-  </div>
-    `);
+      return (tools.innerHTML += layout(e));
     });
 }
