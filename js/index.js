@@ -12,7 +12,7 @@ const customBar = (e) => {
   silder.style.width = `${menuItems[e].offsetWidth}px`;
   silder.style.background =
     "linear-gradient(270deg, #85BFD1 -44.33%, #7C5ADE 121.17%)";
-  silder.style.left = `${menuItems[e].offsetLeft}px`;
+  silder.style.left = `${menuItems[e].offsetLeft + 1}px`;
   widthArr.concat(menuItems[e].offsetWidth);
 };
 
