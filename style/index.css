@@ -254,6 +254,8 @@ body main .about-section .card-about {
 }
 body main .about-section .card-about .img-profile {
   max-width: 330px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 body main .about-section .card-about .img-profile img {
   width: 100%;
@@ -438,8 +440,14 @@ body main .project-section h1 {
   line-height: 40px;
   letter-spacing: 0.25px;
 }
+@media only screen and (max-width: 425px) {
+  body main .project-section h1 {
+    font-size: 20px;
+  }
+}
 body main .project-section .list-item {
   margin-top: 64px;
+  margin-bottom: 24px;
 }
 @media only screen and (max-width: 768px) {
   body main .project-section .list-item {
@@ -447,7 +455,9 @@ body main .project-section .list-item {
   }
 }
 body main .project-section .list-item .box-item {
-  margin-bottom: 24px;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
 }
 body main .project-section .list-item .box-item a {
   font-style: normal;
@@ -460,6 +470,8 @@ body main .project-section .list-item .box-item a {
 body main .project-section .list-item .box-item img {
   margin-top: 8px;
   width: 100%;
+  max-width: 300px;
+  align-self: center;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
@@ -474,27 +486,37 @@ body main .project-section .list-item .box-item img {
 }
 body main .project-section .list-item.projects-page .box-item {
   margin-top: 32px;
+  border-bottom: 1px solid #a0a0a1;
 }
 body main .project-section .list-item.projects-page .box-item:first-child {
   margin-top: 0;
 }
 body main .project-section .list-item.projects-page a {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 24px;
   letter-spacing: 0.15px;
   color: #a0a0a1;
 }
+@media only screen and (max-width: 425px) {
+  body main .project-section .list-item.projects-page a {
+    font-size: 18px;
+  }
+}
 body main .project-section .list-item.projects-page h1 {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 71px;
   letter-spacing: -0.5px;
   margin-top: 10px;
 }
+@media only screen and (max-width: 425px) {
+  body main .project-section .list-item.projects-page h1 {
+    font-size: 15px;
+  }
+}
 body main .project-section .list-item.projects-page img {
-  width: auto;
-  height: auto;
+  max-width: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
@@ -504,16 +526,28 @@ body main .project-section .list-item.projects-page span {
   display: inline-block;
   margin-top: 30px;
   font-weight: 700;
-  font-size: 30px;
-  line-height: 71px;
+  font-size: 20px;
+  line-height: 28px;
   letter-spacing: -0.5px;
+  margin-bottom: 10px;
 }
-body main .project-section .list-item.projects-page p {
+@media only screen and (max-width: 425px) {
+  body main .project-section .list-item.projects-page span {
+    font-size: 15px;
+  }
+}
+body main .project-section .list-item.projects-page li {
+  list-style: disc;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0.5px;
+}
+@media only screen and (max-width: 425px) {
+  body main .project-section .list-item.projects-page li {
+    font-size: 12px;
+  }
 }
 body main .project-section .btn-box {
   display: flex;

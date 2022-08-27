@@ -96,14 +96,38 @@ projectData.slice(0, 2).map((e) => {
   dataContain
     ? (dataContain.innerHTML += `
         <div class="box-item">
-            <a href="${e.link}">${e.name}</a>
-            <a href="">
+            <a target='_blank' href="${e.link}">${e.name}</a>
+           
             <img
                 src="${e.img}"
                 alt="${e.name}"
             />
-            </a>
+            
         </div>
+  `)
+    : null;
+});
+
+
+let work = document.getElementById("projectPgae");
+
+projectData.map((e) => {
+  work
+    ? (work.innerHTML += `
+    <div class="box-item">
+    <a
+      href="${e.link}"
+      target="_blank"
+      >${e.name}</a
+    >
+    <h1>${e.position}</h1>
+    <img
+      src="${e.img}"
+      alt=""
+    />
+    <span>${e.des}</span>
+    ${e.job}
+  </div>
   `)
     : null;
 });

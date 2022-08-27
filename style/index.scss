@@ -232,6 +232,8 @@ body {
         }
         .img-profile {
           max-width: 330px;
+          border-radius: 20px;
+          overflow: hidden;
           img {
             width: 100%;
             height: auto;
@@ -395,14 +397,21 @@ body {
         line-height: 40px;
 
         letter-spacing: 0.25px;
+        @include screen(SM){
+          font-size: 20px;
+        }
       }
       .list-item {
         margin-top: 64px;
+        margin-bottom: 24px;
         @include screen(MD) {
           margin-top: 32px;
         }
         .box-item {
-          margin-bottom: 24px;
+          padding-bottom: 70px;
+         
+          display: flex;
+          flex-direction: column;
           a {
             font-style: normal;
             font-weight: 400;
@@ -414,6 +423,8 @@ body {
           img {
             margin-top: 8px;
             width: 100%;
+            max-width: 300px;
+            align-self: center;
             height: auto;
             object-fit: cover;
             padding-bottom: 12px;
@@ -427,27 +438,34 @@ body {
         &.projects-page {
           .box-item {
             margin-top: 32px;
+            border-bottom: 1px solid #a0a0a1;
             &:first-child {
               margin-top: 0;
             }
           }
           a {
             font-weight: 500;
-            font-size: 20px;
+            font-size: 25px;
             line-height: 24px;
             letter-spacing: 0.15px;
             color: #a0a0a1;
+            @include screen(SM){
+              font-size: 18px;
+            }
           }
           h1 {
             font-weight: 700;
-            font-size: 30px;
+            font-size: 20px;
             line-height: 71px;
             letter-spacing: -0.5px;
             margin-top: 10px;
+            @include screen(SM){
+              font-size: 15px;
+            }
           }
           img {
-            width: auto;
-            height: auto;
+            max-width: 200px;
+            
             object-fit: cover;
             border-radius: 8px;
             margin-top: 40px;
@@ -456,16 +474,24 @@ body {
             display: inline-block;
             margin-top: 30px;
             font-weight: 700;
-            font-size: 30px;
-            line-height: 71px;
+            font-size: 20px;
+            line-height: 28px;
             letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            @include screen(SM){
+              font-size: 15px;
+            }
           }
-          p {
+          li {
+            list-style:disc;
             font-style: normal;
             font-weight: 400;
             font-size: 16px;
             line-height: 28px;
             letter-spacing: 0.5px;
+            @include screen(SM){
+              font-size: 12px;
+            }
           }
         }
       }

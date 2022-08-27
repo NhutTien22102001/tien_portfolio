@@ -29,3 +29,13 @@ window.addEventListener("scroll", fixedNav);
 const onRedirectAbout = () => {
   window.location.replace("/about.html");
 };
+
+const onRedirectWork = () => {
+  window.location.replace("/projects.html");
+};
+
+let cv = document.getElementById("cv");
+
+const onDownLoadCv = () => {
+  cv.click();
+};
