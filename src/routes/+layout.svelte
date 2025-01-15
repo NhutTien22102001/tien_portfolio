@@ -2,6 +2,12 @@
   import Container from "$lib/components/container.svelte";
   import Nav, { items } from "$lib/components/nav.svelte";
   import "$lib/styles/tailwind.css";
+  import type { Config } from '@sveltejs/adapter-vercel';
+
+  export const config: Config = {
+    runtime: 'nodejs22.x'
+  };
+
   const { children } = $props();
 
   let open = $state<boolean>(false);
